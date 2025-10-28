@@ -10183,3 +10183,244 @@ h6,
 .about-text {
   /* opacity: 0.625; */
 }
+
+/* Package card enhancements */
+.package-item {
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.package-item:hover {
+  box-shadow: 0 0 30px #cccccc;
+}
+
+.package-item.expanded {
+  cursor: default;
+}
+
+/* View Details Button */
+.view-details-btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 0;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.view-details-btn:hover {
+  background-color: #3da95b;
+  color: white;
+}
+
+/* Expanded Details Section */
+.expanded-details {
+  max-height: 0;
+  display: none;
+  /* overflow: hidden; */
+  transition: max-height 0.5s ease, opacity 0.3s ease;
+  background-color: white;
+}
+
+.expanded-details.show {
+  width: 100%;
+  max-height: 3000px;
+  border-top: 2px solid #e0e0e0;
+}
+
+/* Detail Tabs */
+.detail-tabs {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+  flex-wrap: wrap;
+}
+
+.detail-tab {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  color: #666;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.detail-tab.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.detail-tab:hover {
+  color: var(--primary);
+}
+
+.tab-content-item {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.tab-content-item.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Itinerary Styles */
+.itinerary-day {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  border-left: 3px solid var(--primary);
+}
+
+.day-title {
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.day-description {
+  color: #666;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* Inclusion/Exclusion Lists */
+.inclusion-list {
+  list-style: none;
+  padding: 0;
+}
+
+.inclusion-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.inclusion-list li i {
+  color: #28a745;
+  margin-right: 10px;
+  min-width: 16px;
+}
+
+.exclusion-list li i {
+  color: #dc3545;
+}
+
+/* Accommodation Options */
+.accommodation-options {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.accommodation-card {
+  flex: 1;
+  min-width: 180px;
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 0;
+  text-align: center;
+  background: white;
+}
+
+.accommodation-card h6 {
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.accommodation-card .price {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2e6f40;
+}
+
+/* Close Button */
+.close-details-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 0;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.close-details-btn:hover {
+  background-color: #5a6268;
+}
+
+/* Modal Customization */
+.modal-header {
+  background-color: var(--primary);
+  color: white;
+}
+
+.modal-header .close {
+  color: white;
+  opacity: 1;
+}
+
+.modal-footer .btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Hide details on mobile */
+@media (max-width: 768px) {
+  .expanded-details {
+    display: none !important;
+  }
+
+  .detail-tab {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+/* Location text ellipsis for long text */
+.location-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Desktop: one line */
+.navbar-brand h2 {
+  white-space: nowrap;
+}
+
+/* Mobile: break into two lines */
+@media (max-width: 576px) {
+  .navbar-brand h2 {
+    white-space: normal; /* allow wrapping */
+  }
+
+  /* Force a break after "RI KHASI" */
+  .navbar-brand h2 span.text-white::after {
+    content: "\A"; /* newline character */
+    white-space: pre;
+  }
+}
